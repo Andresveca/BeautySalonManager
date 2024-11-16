@@ -18,4 +18,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\InicioSesion\" />
+    <Folder Include="Pages\Servicios\" />
+  </ItemGroup>
+
 </Project>
