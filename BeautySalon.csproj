@@ -18,4 +18,9 @@
     </PackageReference>
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pages\Empleados\" />
+    <Folder Include="Pages\Inventarios\" />
+  </ItemGroup>
+
 </Project>
