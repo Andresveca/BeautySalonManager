@@ -7,6 +7,7 @@ namespace BeautySalon.Pages.Clientes
     {
         public void OnGet()
         {
+            // Rama de Andres Velasco
         }
     }
 }
