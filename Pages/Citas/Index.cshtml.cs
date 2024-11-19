@@ -7,6 +7,7 @@ namespace BeautySalon.Pages.Citas
     {
         public void OnGet()
         {
+            //jordy es muy bello
         }
     }
 }
