@@ -1,4 +1,49 @@
 ﻿@page
 @model BeautySalon.Pages.Empleados.CreateModel
+
 @{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>empleado</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="empleado.Nombre" class="control-label"></label>
+                <input asp-for="empleado.Nombre" class="form-control" />
+                <span asp-validation-for="empleado.Nombre" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empleado.Apellido" class="control-label"></label>
+                <input asp-for="empleado.Apellido" class="form-control" />
+                <span asp-validation-for="empleado.Apellido" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empleado.Especialidad" class="control-label"></label>
+                <input asp-for="empleado.Especialidad" class="form-control" />
+                <span asp-validation-for="empleado.Especialidad" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="empleado.HorarioLaboral" class="control-label"></label>
+                <input asp-for="empleado.HorarioLaboral" class="form-control" />
+                <span asp-validation-for="empleado.HorarioLaboral" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
 }

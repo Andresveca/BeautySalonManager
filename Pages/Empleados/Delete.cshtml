@@ -1,4 +1,46 @@
 ﻿@page
 @model BeautySalon.Pages.Empleados.DeleteModel
+
 @{
+    ViewData["Title"] = "Delete";
 }
+
+<h1>Delete</h1>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Empleado</h4>
+    <hr />
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.empleado.Nombre)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empleado.Nombre)
+        </dd>
+        <dt class="col-sm=" 2">
+            @Html.DisplayNameFor(model => model.empleado.Apellido)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empleado.Apellido)
+        </dd>
+        <dt class="col-sm=" 2">
+            @Html.DisplayNameFor(model => model.empleado.Especialidad)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empleado.Especialidad)
+        </dd>
+        <dt class="col-sm=" 2">
+            @Html.DisplayNameFor(model => model.empleado.HorarioLaboral)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.empleado.HorarioLaboral)
+        </dd>
+
+    </dl>
+    <form method="post">
+        <input type="hidden" asp-for="empleado.Id" />
+        <input type="submit" value="Delete" class="btn btn-danger" />
+        <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+    </form>
+</div>
