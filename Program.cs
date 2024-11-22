@@ -1,3 +1,6 @@
+using BeautySalon.Data;
+using Microsoft.EntityFrameworkCore;
+
 namespace BeautySalon
 {
     public class Program
@@ -9,7 +12,18 @@ namespace BeautySalon
             // Add services to the container.
             builder.Services.AddRazorPages();
 
-            var app = builder.Build();
+			//Agregando el concepto SalonContext a la aplicacion
+			builder.Services.AddDbContext<SalonContext>(options =>
+			options.UseSqlServer(builder.Configuration.GetConnectionString("BeautySalonManagerDB"))
+			);
+
+			/*builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+			{
+				options.Cookie.Name = "MyCookieAuth";
+				options.LoginPath = "/Account/Login"; //Sino esta Autenticado, cargue la pagina Login
+			});*/
+            
+			var app = builder.Build();
 
             // Configure the HTTP request pipeline.
             if (!app.Environment.IsDevelopment())
