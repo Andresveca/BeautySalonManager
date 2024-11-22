@@ -26,7 +26,7 @@ namespace BeautySalon.Pages.Servicios
 		{
 			if (!ModelState.IsValid || _context.Servicios == null || Servicio == null)
 			{
-				return Page();
+				//return Page();
 			}
 
 			_context.Servicios.Add(Servicio);

@@ -20,7 +20,7 @@ namespace BeautySalon.Pages.Clientes
 		}
 
 		[BindProperty]
-		public Cliente Cliente { get; set; } = default!; // Cambiado a Cliente
+		public Cliente Cliente { get; set; } = default!; 
 
 		public async Task<IActionResult> OnPostAsync()
 		{
