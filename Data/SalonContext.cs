@@ -5,7 +5,11 @@ namespace BeautySalon.Data
 {
     public class SalonContext : DbContext
     {
-        public DbSet<Servicio> Servicios { get; set; }
+
+		public SalonContext(DbContextOptions options) : base(options)
+		{
+		}
+		public DbSet<Servicio> Servicios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Cita> Citas { get; set; }
