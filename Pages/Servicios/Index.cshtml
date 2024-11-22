@@ -1,0 +1,53 @@
+﻿@page
+@model BeautySalon.Pages.Servicios.IndexModel
+@{
+	ViewData["Title"] = "Index Servicios";
+}
+
+<h1>Index Clientes</h1>
+<p>
+	<a asp-page="Create" class="btn btn-success">Create New</a>
+</p>
+<table class="table">
+	<thead>
+		<tr>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].Nombre)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].Descripcion)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].Precio)
+			</th>
+			<th>
+				@Html.DisplayNameFor(model => model.Servicios[0].DuracionEstimada)
+			</th>
+			
+			<th>Actions</th>
+		</tr>
+	</thead>
+	<tbody>
+		@foreach (var item in Model.Servicios)
+		{
+			<tr>
+				<td>
+					@Html.DisplayFor(modelItem => item.Nombre)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Descripcion)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.Precio)
+				</td>
+				<td>
+					@Html.DisplayFor(modelItem => item.DuracionEstimada)
+				</td>
+				<td>
+					<a asp-page="./Edit" asp-route-id="@item.Id" class="btn btn-danger">Edit</a>
+					<a asp-page="./Delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+				</td>
+			</tr>
+		}
+	</tbody>
+</table>
