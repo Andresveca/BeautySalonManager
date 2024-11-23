@@ -12,5 +12,7 @@ namespace BeautySalon.Models
 		[Required]
 		[DataType(DataType.Password)]
 		public string Password { get; set; }
+
+		public int Edad {  get; set; }
     }
 }

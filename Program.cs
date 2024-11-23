@@ -17,11 +17,12 @@ namespace BeautySalon
 			options.UseSqlServer(builder.Configuration.GetConnectionString("BeautySalonManagerDB"))
 			);
 
-			builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
+			builder.Services.AddAuthentication().AddCookie("MyCookieAuto", options =>
 			{
-				options.Cookie.Name = "MyCookieAuth";
+				options.Cookie.Name = "MyCookieAuto";
 				options.LoginPath = "/InicioSesion/Login"; //Sino esta Autenticado, cargue la pagina Login
-			});
+                options.AccessDeniedPath = "/InicioSesion/AccesoDenegado";
+            });
             
 			var app = builder.Build();
 

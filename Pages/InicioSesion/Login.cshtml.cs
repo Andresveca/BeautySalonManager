@@ -33,22 +33,22 @@ namespace BeautySalon.Pages.InicioSesion
             }
 
             // Valida En BD
-            var usuario = await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == Usuario.Email && m.Password == Usuario.Password);
+            var user = await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == Usuario.Email && m.Password == Usuario.Password);
 
-            if (usuario != null)
+            if (user != null)
             {
                 // Crear los Claims 
                 var claims = new List<Claim>
         {
-            new Claim(ClaimTypes.Name, usuario.Email),
-            new Claim(ClaimTypes.Email,usuario.Password)
+            new Claim(ClaimTypes.Name, user.Nombre),
+            new Claim(ClaimTypes.Email,user.Email)
         };
 
-                var identity = new ClaimsIdentity(claims, "MyCookieAuth");
+                var identity = new ClaimsIdentity(claims, "MyCookieAuto");
 
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-                await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
+                await HttpContext.SignInAsync("MyCookieAuto", claimsPrincipal);
 
                 return RedirectToPage("/Index");  // Manda al Home
             }
