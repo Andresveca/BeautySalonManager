@@ -41,11 +41,11 @@ namespace BeautySalon.Pages.InicioSesion
             new Claim(ClaimTypes.Email,user.Email)
         };
 
-                var identity = new ClaimsIdentity(claims, "MyCookieAuto");
+                var identity = new ClaimsIdentity(claims, "MyCookieAuth");
 
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-                await HttpContext.SignInAsync("MyCookieAuto", claimsPrincipal);
+                await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
 
                 return RedirectToPage("/Index");  // Manda al Home
             }
