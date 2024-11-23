@@ -12,34 +12,35 @@
     <h4>Empleado</h4>
     <hr />
     <dl class="row">
+       
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.empleado.Nombre)
+            @Html.DisplayNameFor(model => model.Empleado.Nombre)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.empleado.Nombre)
+            @Html.DisplayFor(model => model.Empleado.Nombre)
         </dd>
         <dt class="col-sm=" 2">
-            @Html.DisplayNameFor(model => model.empleado.Apellido)
+            @Html.DisplayNameFor(model => model.Empleado.Apellido)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.empleado.Apellido)
+            @Html.DisplayFor(model => model.Empleado.Apellido)
         </dd>
         <dt class="col-sm=" 2">
-            @Html.DisplayNameFor(model => model.empleado.Especialidad)
+            @Html.DisplayNameFor(model => model.Empleado.Especialidad)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.empleado.Especialidad)
+            @Html.DisplayFor(model => model.Empleado.Especialidad)
         </dd>
         <dt class="col-sm=" 2">
-            @Html.DisplayNameFor(model => model.empleado.HorarioLaboral)
+            @Html.DisplayNameFor(model => model.Empleado.HorarioLaboral)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.empleado.HorarioLaboral)
+            @Html.DisplayFor(model => model.Empleado.HorarioLaboral)
         </dd>
 
     </dl>
     <form method="post">
-        <input type="hidden" asp-for="empleado.Id" />
+        <input type="hidden" asp-for="Empleado.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" />
         <a asp-page="./Index" class="btn btn-primary">Back to List</a>
     </form>

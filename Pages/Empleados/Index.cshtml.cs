@@ -14,13 +14,13 @@ namespace BeautySalon.Pages.Empleados
             _context = context;
         }
 
-        public IList<Empleado> empleado { get; set; } = default!;
+        public IList<Empleado> Empleado { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
             if (_context.Empleados != null)
             {
-                empleado = await _context.Empleados.ToListAsync();
+                Empleado = await _context.Empleados.ToListAsync();
             }
         }
     }

@@ -16,7 +16,7 @@ namespace BeautySalon.Pages.Empleados
         }
 
         [BindProperty]
-        public Empleado empleado { get; set; } = default!;
+        public Empleado Empleado { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
@@ -29,7 +29,7 @@ namespace BeautySalon.Pages.Empleados
 
             if (empleado != null)
             {
-                empleado = empleado;
+                Empleado = empleado;
                 _context.Empleados.Remove(empleado);
                 await _context.SaveChangesAsync();
             }

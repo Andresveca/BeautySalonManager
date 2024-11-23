@@ -16,7 +16,7 @@ namespace BeautySalon.Pages.Empleados
         }
 
         [BindProperty]
-        public Empleado empleado { get; set; } = default!;
+        public Empleado Empleado { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,17 +30,17 @@ namespace BeautySalon.Pages.Empleados
             {
                 return NotFound();
             }
-            empleado = empleado;
+            Empleado = empleado;
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+               // return Page();
             }
 
-            _context.Attach(empleado).State = EntityState.Modified;
+            _context.Attach(Empleado).State = EntityState.Modified;
 
             try
             {
@@ -48,7 +48,7 @@ namespace BeautySalon.Pages.Empleados
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!EmpleadoExists(empleado.Id))
+                if (!EmpleadoExists(Empleado.Id))
                 {
                     return NotFound();
                 }

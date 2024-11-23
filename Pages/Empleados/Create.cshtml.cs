@@ -20,16 +20,13 @@ namespace BeautySalon.Pages.Empleados
         }
 
         [BindProperty]
-        public Empleado empleado { get; set; } = default!;
+        public Empleado Empleado { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Empleados == null || empleado == null)
-            {
-                return Page();
-            }
+           
 
-            _context.Empleados.Add(empleado);
+            _context.Empleados.Add(Empleado);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
