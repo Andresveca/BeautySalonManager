@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 
-namespace BeautySalon.Pages.Clientes
+namespace BeautySalon.Pages.Servicios
 {
 	[Authorize]
 	public class IndexModel : PageModel
@@ -17,16 +17,16 @@ namespace BeautySalon.Pages.Clientes
             _context = context;
         }
 
-        public IList<Cliente> Clientes { get; set; } = default!;
+        public IList<Servicio> Servicios { get; set; } = default!;
 
 
         public async Task OnGetAsync()
         {
-            if (_context.Clientes != null)
+            if (_context.Servicios != null)
 
-                Clientes  = await _context.Clientes.ToListAsync();
-            }
-
+                Servicios = await _context.Servicios.ToListAsync();
         }
+
     }
+}
 

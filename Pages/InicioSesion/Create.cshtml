@@ -1,0 +1,43 @@
+﻿@page
+@model BeautySalon.Pages.InicioSesion.CreateModel
+
+@{
+	ViewData["Title"] = "Registrese";
+}
+
+<h1>Creacion de Usuario </h1>
+
+<h4>Ingrese la sigueinte informacion</h4>
+<hr />
+<div class="row">
+	<div class="col-md-4">
+		<form method="post">
+			<div asp-validation-summary="ModelOnly" class="text-danger"></div>
+			<div class="form-group">
+				<label asp-for="Usuario.Nombre" class="control-label"></label>
+				<input asp-for="Usuario.Nombre" class="form-control" />
+				<span asp-validation-for="Usuario.Nombre" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Usuario.Email" class="control-label"></label>
+				<input asp-for="Usuario.Email" class="form-control" />
+				<span asp-validation-for="Usuario.Email" class="text-danger"></span>
+			</div>
+			<div class="form-group">
+				<label asp-for="Usuario.Password" class="control-label"></label>
+				<input asp-for="Usuario.Password" class="form-control" />
+				<span asp-validation-for="Usuario.Password" class="text-danger"></span>
+			</div>
+			<div class="form-group mt-3">
+				<input type="submit" value="Registrar" class="btn btn-success" />
+				<a asp-page="Login" class="btn btn-primary">Regresar</a>
+			</div>
+		</form>
+	</div>
+</div>
+
+@section Scripts {
+	@{
+		await Html.RenderPartialAsync("_ValidationScriptsPartial");
+	}
+}
