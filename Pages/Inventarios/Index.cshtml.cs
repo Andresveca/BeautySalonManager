@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore;
 using BeautySalon.Data;
 using BeautySalon.Models;
 
-namespace BeautySalon.Pages.Citas
+namespace BeautySalon.Pages.Inventarios
 {
     public class IndexModel : PageModel
     {
@@ -14,13 +14,13 @@ namespace BeautySalon.Pages.Citas
             _context = context;
         }
 
-        public IList<Cita> Citas { get; set; } = default!;
+        public IList<Inventario> Inventarios { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Citas != null)
+            if (_context.Inventarios != null)
             {
-                Citas = await _context.Citas.ToListAsync();
+                Inventarios = await _context.Inventarios.ToListAsync();
             }
         }
     }
