@@ -17,9 +17,9 @@ namespace BeautySalon
 			options.UseSqlServer(builder.Configuration.GetConnectionString("BeautySalonManagerDB"))
 			);
 
-			builder.Services.AddAuthentication().AddCookie("MyCookieAuto", options =>
+			builder.Services.AddAuthentication().AddCookie("MyCookieAuth", options =>
 			{
-				options.Cookie.Name = "MyCookieAuto";
+				options.Cookie.Name = "MyCookieAuth";
 				options.LoginPath = "/InicioSesion/Login"; //Sino esta Autenticado, cargue la pagina Login
                 options.AccessDeniedPath = "/InicioSesion/AccesoDenegado";
             });
