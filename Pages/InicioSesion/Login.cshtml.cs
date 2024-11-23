@@ -27,10 +27,7 @@ namespace BeautySalon.Pages.InicioSesion
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             // Valida En BD
             var user = await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == Usuario.Email && m.Password == Usuario.Password);
