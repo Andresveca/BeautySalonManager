@@ -1,0 +1,53 @@
+﻿@page
+@model BeautySalon.Pages.Clientes.DeleteModel
+@{
+	ViewData["Title"] = "Delete";
+}
+
+<h1>Delete</h1>
+
+<h3>Esta seguro de eliminar este cliente? </h3>
+
+<div>
+	<h4>Cliente</h4>
+	<hr />
+	<dl class="row">
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente.Nombre)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente.Nombre)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente.Apellido)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente.Apellido)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente.Telefono)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente.Telefono)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente.Email)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente.Email)
+		</dd>
+		<dt class="col-sm-2">
+			@Html.DisplayNameFor(model => model.Cliente.HistorialServicios)
+		</dt>
+		<dd class="col-sm-10">
+			@Html.DisplayFor(model => model.Cliente.HistorialServicios)
+		</dd>
+	</dl>
+
+	<form method="post">
+		<input type="hidden" asp-for="Cliente.Id" />
+		<input type="submit" value="Borrar" class="btn btn-danger" />
+		<a asp-page="./Index" class="btn btn-primary">Regresar</a>
+	
+	</form>
+</div>
