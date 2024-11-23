@@ -16,7 +16,7 @@ namespace BeautySalon.Pages.Citas
         }
 
         [BindProperty]
-        public Cita cita { get; set; } = default!;
+        public Cita Cita { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync(int id)
         {
@@ -29,8 +29,8 @@ namespace BeautySalon.Pages.Citas
 
             if (cita != null)
             {
-                cita = cita;
-                _context.Citas.Remove(cita);
+                Cita = cita;
+                _context.Citas.Remove(Cita);
                 await _context.SaveChangesAsync();
             }
 

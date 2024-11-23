@@ -16,7 +16,7 @@ namespace BeautySalon.Pages.Citas
         }
 
         [BindProperty]
-        public Cita cita { get; set; } = default!;
+        public Cita Cita { get; set; } = default!;
 
         public async Task<IActionResult> OnGetAsync(int? id)
         {
@@ -30,17 +30,17 @@ namespace BeautySalon.Pages.Citas
             {
                 return NotFound();
             }
-            cita = cita;
+            Cita = cita;
             return Page();
         }
         public async Task<IActionResult> OnPostAsync()
         {
             if (!ModelState.IsValid)
             {
-                return Page();
+               // return Page();
             }
 
-            _context.Attach(cita).State = EntityState.Modified;
+            _context.Attach(Cita).State = EntityState.Modified;
 
             try
             {
@@ -48,7 +48,7 @@ namespace BeautySalon.Pages.Citas
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CitaExists(cita.Id))
+                if (!CitaExists(Cita.Id))
                 {
                     return NotFound();
                 }

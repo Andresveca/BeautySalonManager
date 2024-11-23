@@ -13,15 +13,15 @@
 <table class="table">
     <thead>
         <tr>
-            <th>@Html.DisplayNameFor(model => model.Empleado[0].Nombre)</th>
-            <th>@Html.DisplayNameFor(model => model.Empleado[0].Apellido)</th>
-            <th>@Html.DisplayNameFor(model => model.Empleado[0].Especialidad)</th>
-            <th>@Html.DisplayNameFor(model => model.Empleado[0].HorarioLaboral)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Nombre)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Apellido)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].Especialidad)</th>
+            <th>@Html.DisplayNameFor(model => model.Empleados[0].HorarioLaboral)</th>
             <th>Actions</th>
         </tr>
     </thead>
     <tbody>
-        @foreach (var item in Model.Empleado)
+        @foreach (var item in Model.Empleados)
         {
             <tr>
                 <td>@Html.DisplayFor(modelItem => item.Nombre)</td>

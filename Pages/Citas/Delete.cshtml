@@ -12,38 +12,38 @@
     <h4>Cita</h4>
     <hr />
     <dl class="row">
-            @Html.DisplayNameFor(model => model.cita.IdServicio)
+            @Html.DisplayNameFor(model => model.Cita.IdServicio)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cita.IdServicio)
+            @Html.DisplayFor(model => model.Cita.IdServicio)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cita.IdCliente)
+            @Html.DisplayNameFor(model => model.Cita.IdCliente)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cita.IdCliente)
+            @Html.DisplayFor(model => model.Cita.IdCliente)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cita.IdEmpleado)
+            @Html.DisplayNameFor(model => model.Cita.IdEmpleado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cita.IdEmpleado)
+            @Html.DisplayFor(model => model.Cita.IdEmpleado)
         </dd>
         <dt class="col-sm-2">
-            @Html.DisplayNameFor(model => model.cita.FechaHora)
+            @Html.DisplayNameFor(model => model.Cita.FechaHora)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cita.FechaHora)
+            @Html.DisplayFor(model => model.Cita.FechaHora)
         </dd>
         <dt class="col-sm=" 2">
-            @Html.DisplayNameFor(model => model.cita.Estado)
+            @Html.DisplayNameFor(model => model.Cita.Estado)
         </dt>
         <dd class="col-sm-10">
-            @Html.DisplayFor(model => model.cita.Estado)
+            @Html.DisplayFor(model => model.Cita.Estado)
         </dd>
     </dl>
     <form method="post">
-        <input type="hidden" asp-for="cita.Id" />
+        <input type="hidden" asp-for="Cita.Id" />
         <input type="submit" value="Delete" class="btn btn-danger" />
         <a asp-page="./Index" class="btn btn-primary">Back to List</a>
     </form>

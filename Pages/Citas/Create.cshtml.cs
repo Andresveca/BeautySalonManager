@@ -20,16 +20,13 @@ namespace BeautySalon.Pages.Citas
         }
 
         [BindProperty]
-        public Cita cita { get; set; } = default!;
+        public Cita Cita { get; set; } = default!;
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid || _context.Citas == null || cita == null)
-            {
-                return Page();
-            }
+            
 
-            _context.Citas.Add(cita);
+            _context.Citas.Add(Cita);
             await _context.SaveChangesAsync();
 
             return RedirectToPage("./Index");
