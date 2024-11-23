@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BeautySalon.Data;
 using BeautySalon.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeautySalon.Pages.Inventarios
 {
+    [Authorize]
     public class EditModel : PageModel
     {
         private readonly SalonContext _context;

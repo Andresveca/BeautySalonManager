@@ -3,9 +3,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using BeautySalon.Data;
 using BeautySalon.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeautySalon.Pages.Citas
 {
+    [Authorize]
     public class DeleteModel : PageModel
     {
         private readonly SalonContext _context;

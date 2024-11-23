@@ -2,9 +2,11 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BeautySalon.Data;
 using BeautySalon.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace BeautySalon.Pages.Citas
 {
+    [Authorize]
     public class CreateModel : PageModel
     {
         private readonly SalonContext _context;
