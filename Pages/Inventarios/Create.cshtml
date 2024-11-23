@@ -1,0 +1,49 @@
+﻿@page
+@model BeautySalon.Pages.Inventarios.CreateModel
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Inventario</h4>
+<hr />
+
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="Inventario.NombreProducto" class="control-label"></label>
+                <input asp-for="Inventario.NombreProducto" class="form-control" />
+                <span asp-validation-for="Inventario.NombreProducto" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventario.CantidadDisponible" class="control-label"></label>
+                <input asp-for="Inventario.CantidadDisponible" class="form-control" />
+                <span asp-validation-for="Inventario.CantidadDisponible" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventario.CostoUnitario" class="control-label"></label>
+                <input asp-for="Inventario.CostoUnitario" class="form-control" />
+                <span asp-validation-for="Inventario.CostoUnitario" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Inventario.Proveedor" class="control-label"></label>
+                <input asp-for="Inventario.Proveedor" class="form-control" />
+                <span asp-validation-for="Inventario.Proveedor" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+                <a asp-page="./Index" class="btn btn-secondary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
