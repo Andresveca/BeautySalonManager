@@ -1,0 +1,54 @@
+﻿@page
+@model BeautySalon.Pages.Citas.EditModel
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Cita</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form method="post">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Cita.Id" />
+            <div class="form-group">
+                <label asp-for="Cita.IdServicio" class="control-label"></label>
+                <input asp-for="Cita.IdServicio" class="form-control" />
+                <span asp-validation-for="Cita.IdServicio" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cita.IdCliente" class="control-label"></label>
+                <input asp-for="Cita.IdCliente" class="form-control" />
+                <span asp-validation-for="Cita.IdCliente" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cita.IdEmpleado" class="control-label"></label>
+                <input asp-for="Cita.IdEmpleado" class="form-control" />
+                <span asp-validation-for="Cita.IdEmpleado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cita.FechaHora" class="control-label"></label>
+                <input asp-for="Cita.FechaHora" class="form-control" />
+                <span asp-validation-for="Cita.FechaHora" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Cita.Estado" class="control-label"></label>
+                <input asp-for="Cita.Estado" class="form-control" />
+                <span asp-validation-for="Cita.Estado" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+                <a asp-page="./Index" class="btn btn-primary">Back to List</a>
+            </div>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

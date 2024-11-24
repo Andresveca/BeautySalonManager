@@ -12,7 +12,7 @@ namespace BeautySalon.Models
         public string Email { get; set; }
         public string? HistorialServicios { get; set; }
 
-        public ICollection<Cita> Citas { get; set; } // Propiedad de navegacion
+        public ICollection<Cita> Citas { get; set; } // navegacion
 
     }
 }

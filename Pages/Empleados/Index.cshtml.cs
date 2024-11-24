@@ -1,13 +1,10 @@
-
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using BeautySalon.Data;
 using BeautySalon.Models;
-using Microsoft.AspNetCore.Authorization;
 
-namespace BeautySalon.Pages.Citas
+namespace BeautySalon.Pages.Empleados
 {
-    [Authorize]
     public class IndexModel : PageModel
     {
         private readonly SalonContext _context;
@@ -17,13 +14,13 @@ namespace BeautySalon.Pages.Citas
             _context = context;
         }
 
-        public IList<Cita> Citas { get; set; } = default!;
+        public IList<Empleado> Empleados { get; set; } = default!;
 
         public async Task OnGetAsync()
         {
-            if (_context.Citas != null)
+            if (_context.Empleados != null)
             {
-                Citas = await _context.Citas.ToListAsync();
+                Empleados = await _context.Empleados.ToListAsync();
             }
         }
     }

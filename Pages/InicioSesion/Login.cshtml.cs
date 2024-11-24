@@ -27,10 +27,7 @@ namespace BeautySalon.Pages.InicioSesion
 
         public async Task<IActionResult> OnPostAsync()
         {
-            if (!ModelState.IsValid)
-            {
-                return Page();
-            }
+            
 
             // Valida En BD
             var user = await _context.Usuarios.FirstOrDefaultAsync(m => m.Email == Usuario.Email && m.Password == Usuario.Password);
@@ -44,11 +41,11 @@ namespace BeautySalon.Pages.InicioSesion
             new Claim(ClaimTypes.Email,user.Email)
         };
 
-                var identity = new ClaimsIdentity(claims, "MyCookieAuto");
+                var identity = new ClaimsIdentity(claims, "MyCookieAuth");
 
                 ClaimsPrincipal claimsPrincipal = new ClaimsPrincipal(identity);
 
-                await HttpContext.SignInAsync("MyCookieAuto", claimsPrincipal);
+                await HttpContext.SignInAsync("MyCookieAuth", claimsPrincipal);
 
                 return RedirectToPage("/Index");  // Manda al Home
             }
